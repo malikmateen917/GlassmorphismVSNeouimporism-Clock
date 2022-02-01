@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
+}
+body {
+	min-height: 100vh;
+	padding: 20px;
+	background:	#091921;
+}
+section {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+h1 {
+	position: relative;
+	font-size: 30px;
+	font-weight: 500;
+	text-align: center;
+	width: 100%;
+	padding: 10px;
+	margin: 10px auto 30px;
+	color: #fff;
+}
+h2 {
+	position: absolute;
+	z-index: 11;
+	color: #fff;
+}
+h2:nth-child(1) {
+	font-weight: 700;
+	background: rgba(255,255,255,0.05);
+	text-align: center;
+	padding: 5px 8px;
+	font-size: 25px;
+	left: 17%;
+    top: -10%;
+}
+h2:nth-child(3) {	
+	right: 16%;
+    top: -10%;
+    text-align: center;
+    font-weight: 300;
+	padding: 5px 8px;
+	font-size: 25px;
+    box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+				inset 0 -15px 15px rgba(255,255,255,0.05),
+				0 15px 15px rgba(0,0,0,0.7),
+				inset 0 15px 15px rgba(0,0,0,0.4);
+}
+.wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/*-------------------
+------Clock 01-------
+---------------------*/
+.wrapper .container-01 {
+	position: relative;
+	width: 50%;
+	min-height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: #091921;
+}
+.wrapper .container-01::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#e91e63, #ffc187);
+	clip-path: circle(22% at 28% 15%);	
+}
+.wrapper .container-01::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#ffffff, #da00ff);
+	clip-path: circle(22% at 78% 80%);	
+}
+
+.wrapper .container-01 .clock {
+	width: 350px;
+	height: 350px;
+  z-index: 1;
+	display: flex;
+	overflow: hidden;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255,255,255, 0.05);
+	border: 4px solid #091921;
+	border-radius: 50%;
+	backdrop-filter: blur(15px);
+	border-top: 1px solid rgba(255,255,255, 0.2);
+	border-left: 1px solid rgba(255,255,255, 0.2);
+	box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+.wrapper .container-01 .clock:before {
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	border-radius: 50%;
+	z-index: 10;
+}
+.wrapper .container-01 .clock .hour,
+.wrapper .container-01 .clock .min,
+.wrapper .container-01 .clock .sec {
+	position: absolute;
+}	
+.wrapper .container-01 .clock .hour, .hr {
+	width: 160px;
+	height: 160px;
+}
+.wrapper .container-01 .clock .min, .mn {
+	width: 190px;
+	height: 190px;
+}
+.wrapper .container-01 .clock .sec, .sc {
+	width: 230px;
+	height: 230px;
+}
+.wrapper .container-01 .clock .hour .hr,
+.wrapper .container-01 .clock .min .mn,
+.wrapper .container-01 .clock .sec .sc {
+	display: flex;
+	justify-content:center;
+	/*align-items: center;*/
+	position: absolute;
+	border-radius: 50%;
+}
+.wrapper .container-01 .clock .hour .hr:before {
+	content: '';
+	position: absolute;
+	width: 8px;
+	height: 80px;
+	background: #ff105e;
+	opacity: 0.8;
+	z-index: 9;
+	border-radius:6px 6px 0 0;
+}
+.wrapper .container-01 .clock .min .mn:before {
+	content: '';
+	position: absolute;
+	width: 4px;
+	height: 90px;
+	background: #fff;
+	opacity: 0.8;
+	z-index: 10;
+	border-radius:6px 6px 0 0;	
+}
+.wrapper .container-01 .clock .sec .sc:before {
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 150px;
+	background: #3498db;
+	z-index: 12;
+	border-radius:6px 6px 0 0;	
+}
+.wrapper .container-01 .clock .indicators {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.wrapper .container-01 .clock .indicators div {
+	position: absolute;
+	width: 2px;
+	height: 5px;
+	background: #404040;
+	user-select: none;
+	cursor: none;
+	border-bottom: 1px solid rgba(255,255,255,0.05);
+	border-left: 1px solid rgba(255,255,255,0.05);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(1){
+	transform: rotate(30deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(2){
+	transform: rotate(60deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(3):before{
+	content: '3';
+    font-weight: 700;
+    position: absolute;
+    transform: rotate(-90deg) translate(-10px, -4px);
+    font-size: 20px;
+    color: rgba(255,255,255,0.3);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(3){
+	background: #3498db;
+	transform: rotate(90deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(4){
+	transform: rotate(120deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(5){
+	transform: rotate(150deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(6):before{
+	content: '6';
+    font-weight: 700;
+    position: absolute;
+    transform: rotate(180deg) translate(6px, -10px);
+    font-size: 20px;
+    color: rgba(255,255,255,0.3);    
+}
+.wrapper .container-01 .clock .indicators div:nth-child(6){
+	background: #3498db;
+	transform: rotate(180deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(7){
+	transform: rotate(210deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(8){
+	transform: rotate(240deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(9):before{
+	content: '9';
+    font-weight: 700;
+    position: absolute;
+    transform: rotate(90deg) translate(8px, 2px);
+    font-size: 20px;
+    color: rgba(255,255,255,0.3);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(9){
+	background: #3498db;
+	transform: rotate(270deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(10){
+	transform: rotate(300deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(11){
+	transform: rotate(330deg) translateY(-150px);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(12):before{
+	content: '12';
+    font-weight: 700;
+    position: absolute;
+    transform: rotate(0deg) translate(-8px, 10px);
+    font-size: 20px;
+    color: rgba(255,255,255,0.3);
+}
+.wrapper .container-01 .clock .indicators div:nth-child(12){
+	background: #3498db;
+	opacity: 0.5;
+	transform: rotate(360deg) translateY(-150px);
+}
+
+.wrapper .container-01 p {
+	z-index: 12;
+	margin: 20px auto 10px;
+	position: relative;
+	color: #fff;
+}
+.wrapper .container-01 p span {
+	font-weight: 700;
+}
+
+/*-------------------
+------Clock 02-------
+---------------------*/
+.wrapper .container-02 {
+	position: relative;
+	width: 50%;
+	min-height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.wrapper .container-02 .clock {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 350px;
+	width: 350px;
+	border-radius: 50%;
+	box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+				inset 0 -15px 15px rgba(255,255,255,0.05),
+				0 15px 15px rgba(0,0,0,0.7),
+				inset 0 15px 15px rgba(0,0,0,0.4);
+}
+.wrapper .container-02 .clock:before {
+	position: absolute;
+	content: '';
+	height: 320px;
+	width: 320px;
+	border-radius: 50%;
+	box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+				inset 0 -15px 15px rgba(255,255,255,0.05),
+				0 15px 15px rgba(0,0,0,0.7),
+				inset 0 15px 15px rgba(0,0,0,0.4);
+}
+.wrapper .container-02 .clock:after {
+	position: absolute;
+	content: '';
+	height: 220px;
+	width: 220px;
+	border-radius: 50%;
+	box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+				inset 0 -15px 15px rgba(255,255,255,0.05),
+				0 15px 15px rgba(0,0,0,0.7),
+				inset 0 15px 15px rgba(0,0,0,0.4);
+}
+.wrapper .container-02 .clock .center-nut {
+	height: 15px;
+	width: 15px;
+	background: #404040;
+	border-radius: 50%;
+	z-index: 2;
+}
+.wrapper .container-02 .clock .center-nut2 {
+	height: 9px;
+	width: 9px;
+	background: #3498db;
+	border-radius: 50%;
+	z-index: 10;
+	position: absolute;
+}
+.wrapper .container-02 .clock .indicators {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.wrapper .container-02 .clock .indicators div {
+	position: absolute;
+	width: 2px;
+	height: 5px;
+	border: 3px solid #091921;
+	box-shadow: 0 -3px 3px rgba(255,255,255,0.05),
+				inset 0 -3px 3px rgba(255,255,255,0.05),
+				0 3px 3px rgba(0,0,0,0.7),
+				inset 0 3px 3px rgba(0,0,0,0.4);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(1){
+	transform: rotate(30deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(2){
+	transform: rotate(60deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(3):before{
+	content: '3';
+    font-weight: 500;
+    position: absolute;
+    transform: rotate(-90deg) translate(-5px, -4px);
+    font-size: 20px;
+    color: #fff;
+    opacity: 0.3;
+}
+.wrapper .container-02 .clock .indicators div:nth-child(3){
+	background: #3498db;
+	transform: rotate(90deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(4){
+	transform: rotate(120deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(5){
+	transform: rotate(150deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(6):before{
+	content: '6';
+    font-weight: 500;
+    position: absolute;
+    transform: rotate(180deg) translate(6px, -10px);
+    font-size: 20px;
+    color: #fff;
+    opacity: 0.3;
+}
+.wrapper .container-02 .clock .indicators div:nth-child(6){
+	background: #3498db;
+	transform: rotate(180deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(7){
+	transform: rotate(210deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(8){
+	transform: rotate(240deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(9):before{
+	content: '9';
+    font-weight: 500;
+    position: absolute;
+    transform: rotate(90deg) translate(4px, 2px);
+    font-size: 20px;
+    color: #fff;
+    opacity: 0.3;
+}
+.wrapper .container-02 .clock .indicators div:nth-child(9){
+	background: #3498db;
+	transform: rotate(270deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(10){
+	transform: rotate(300deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(11){
+	transform: rotate(330deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .indicators div:nth-child(12):before{
+	content: '12';
+    font-weight: 500;
+    position: absolute;
+    transform: rotate(0deg) translate(-8px, 5px);
+    font-size: 20px;
+    color: #fff;
+    opacity: 0.3;
+}
+.wrapper .container-02 .clock .indicators div:nth-child(12){
+	background: #3498db;
+	transform: rotate(360deg) translateY(-100px);
+}
+.wrapper .container-02 .clock .sec-hand,
+.wrapper .container-02 .clock .min-hand,
+.wrapper .container-02 .clock .hour-hand {
+	position: absolute;	
+}
+.wrapper .container-02 .clock .sec-hand, 
+.wrapper .container-02 .clock .sec-hand .sec {
+	width: 180px;
+	height: 180px;
+	z-index: 6;
+}
+.wrapper .container-02 .clock .min-hand, 
+.wrapper .container-02 .clock .min-hand .min {
+	width: 140px;
+	height: 140px;
+	z-index: 5;	
+}
+.wrapper .container-02 .clock .hour-hand,
+.wrapper .container-02 .clock .hour-hand .hr {
+	width: 110px;
+	height: 110px;
+	z-index: 4;
+}
+.wrapper .container-02 .clock .sec-hand .sec,
+.wrapper .container-02 .clock .min-hand .min,
+.wrapper .container-02 .clock .hour-hand .hr {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+}
+/*Aiguille des secondes*/
+.wrapper .container-02 .clock .sec-hand .sec:before {
+	position: absolute;
+	content: '';
+	height: 110px;
+	width: 3px;
+	background: #3498db;
+}
+.wrapper .container-02 .clock .sec-hand .sec:after {
+	position: absolute;
+	content: '';
+	height: 35px;
+	width: 7px;
+	background: #3498db;
+	top: 105px;
+	border-radius: 5px;
+}
+/*Aiguilles des minutes*/
+.wrapper .container-02 .clock .min-hand .min:before {
+	position: absolute;
+	content: '';
+	width: 1px;
+	top: -15px;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-bottom: 60px solid #fff;
+}
+.wrapper .container-02 .clock .min-hand .min:after {
+	position: absolute;
+	content: '';
+	width: 3px;
+	top: 40px;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	border-bottom: 30px solid #fff;
+}
+/*Aiguilles des heures*/
+.wrapper .container-02 .clock .hour-hand .hr:before {
+	position: absolute;
+	content: '';
+	width: 1px;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-bottom: 35px solid #ff105e;
+}
+.wrapper .container-02 .clock .hour-hand .hr:after {
+	position: absolute;
+	content: '';
+	width: 3px;
+	top: 35px;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	border-bottom: 25px solid #ff105e;
+}
+.wrapper .container-02 p {
+	z-index: 12;
+	margin: 20px auto 10px;
+	position: relative;
+	color: #fff;
+}
+.wrapper .container-02 p span {
+	font-weight: 700;
+}
+
+/*-------------------------
+--------RESPONSIVE--------
+--------------------------*/
+@media (max-width: 991px) {
+	h1 {
+		display: none;
+	}
+	h2:nth-child(1){
+		left: 6%;
+    	top: 0%;
+	}
+	h2:nth-child(3){
+		left: 3%;
+    	top: 47%;
+    	width: 20%
+	}
+	.wrapper {
+		flex-direction: column;
+	}
+	.wrapper .container-02 {
+		margin-top: 70px;
+	}
+}
